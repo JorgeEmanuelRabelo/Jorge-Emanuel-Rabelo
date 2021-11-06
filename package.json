@@ -1,13 +1,32 @@
 {
-  "devDependencies": {
-    "@types/node": "^16.11.6",
-    "eslint-plugin-node": "^11.1.0",
-    "git-commit-msg-linter": "^3.2.8",
-    "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
-    "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "@eslint/eslintrc": "1.0.4"
-  }
+    "name": "React",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index",
+        "dev": "webpack serve  --config webpack.dev.js  --open",
+        "build": "webpack --config webpack.prod.js",
+        "test": "jest --passWithNoTests --no-cache --runInBand",
+        "test:watch": "yarn test -- --watch",
+        "test:staged": "yarn test -- --findRelatedTests",
+        "test:ci": "yarn test -- --coverage"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^27.0.2",
+        "@types/node": "^16.11.6",
+        "eslint-plugin-node": "^11.1.0",
+        "git-commit-msg-linter": "^3.2.8",
+        "husky": "^7.0.4",
+        "jest": "^27.3.1",
+        "lint-staged": "^11.2.6",
+        "ts-jest": "^27.0.7",
+        "typescript": "^4.4.4"
+    },
+    "dependencies": {
+        "@eslint/eslintrc": "1.0.4"
+    }
 }
