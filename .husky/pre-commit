@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '$ pre-commit -> lint-staged'
+yarn pre-commit
