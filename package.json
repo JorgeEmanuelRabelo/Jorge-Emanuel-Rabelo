@@ -12,7 +12,7 @@
         "test:staged": "yarn test -- --findRelatedTests",
         "test:ci": "yarn test -- --coverage",
         "prepare": "npm set-script husky install",
-        "husky": "husky install",
+        "husky": "install",
         "pre-commit": "lint-staged"
     },
     "keywords": [],
@@ -21,6 +21,8 @@
     "devDependencies": {
         "@types/jest": "^27.0.2",
         "@types/node": "^16.11.6",
+        "@typescript-eslint/eslint-plugin": "^5.3.0",
+        "@typescript-eslint/parser": "^5.3.0",
         "eslint": "^8.2.0",
         "eslint-config-standard-with-typescript": "^21.0.1",
         "eslint-plugin-import": "^2.25.2",
