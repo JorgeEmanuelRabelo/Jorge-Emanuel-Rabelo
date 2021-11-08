@@ -1,7 +1,9 @@
 import { HttpPostClientSpy } from '@/data/test/mock-http-clinet'
+import { HttpStatusCode } from '@/data/protocols/http/http-response'
+import { mockAuthentication } from '@/domain/test/mock-authentication'
+import { InvalidCredentialsError } from '@/domain/errors/Invalid-credentials-error'
 import { RemoteAuthentication } from './remote-authentication'
 import faker from 'faker'
-import { mockAuthentication } from '@/domain/test/mock-authentication'
 
 type SutTypes = {
   sut: RemoteAuthentication
@@ -26,5 +28,14 @@ describe('RemoteAuthentication', () => {
     const authenticationParams = mockAuthentication()
     await sut.auth(authenticationParams)
     expect(httpPostClientSpy.body).toEqual(authenticationParams)
+  })
+
+  test('Chamar HttpPostClient com credenciais invalidas retornando erro 401 (InvalidCredentialsError)', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.unathorized
+    }
+    const promise = sut.auth(mockAuthentication())
+    await expect(promise).rejects.toThrow(new InvalidCredentialsError())
   })
 })
