@@ -1,7 +1,7 @@
 {
     "name": "React",
     "version": "0.0.0",
-    "description": "",
+    "description": "Portifolio Jorge Emanuel Rabelo",
     "main": "index.js",
     "scripts": {
         "start": "node index",
@@ -16,7 +16,7 @@
         "pre-commit": "lint-staged"
     },
     "keywords": [],
-    "author": "",
+    "author": "Jorge Emanuel Rabelo",
     "license": "ISC",
     "devDependencies": {
         "@types/axios": "^0.14.0",
