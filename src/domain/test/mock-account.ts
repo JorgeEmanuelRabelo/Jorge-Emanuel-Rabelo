@@ -10,3 +10,7 @@ export const mockAuthentication = (): AuthenticationParams => ({
 export const mockAccountModel = (): AccountModel => ({
   accessToken: faker.random.uuid()
 })
+
+export const mockUrl = {
+  url: faker.internet.url()
+}
